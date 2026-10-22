@@ -22,6 +22,9 @@ Link to [win2xcur] GitHub page.
     - if the original cursor does not have .ani files (or .cur, but that's very rare) you'll get an error, in which case use:
       
       `<input_folder>/*.cur -o <convert_folder>`
+    - some ported packs leave the hotspot at (0,0) on their smaller frames. To copy the hotspot from the largest frame before converting:
+      
+      `python3 tools/patch_ani_hotspots.py <input_folder> <patched_folder>` and convert `<patched_folder>` instead
 
 3.     python ./cursor_map.py <convert_folder> <output_folder>
     - depending on your PATH entry use 'python' or 'python3'
